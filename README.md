@@ -5,7 +5,7 @@ Ao executar o código, alguns dados precisaram ser inseridos, respectivamente:
 - Definir o intervalo:
   - Qual o número inicial? (Valor padrão é 1)
   - Qual o número final? (Valor padrão é 10)
-- Quantos números deseja sortear? (Valor padrão é 1)
+- Quantos números deseja sortear? (Valor padrão é 1) (máximo: valor final - valor inicial)
 - Deseja permitir números repetidos? (Y/N)
 
 Feito tudo isto, será sorteado o(s) número(s) e será exibido para o usuário.
