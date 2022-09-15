@@ -31,13 +31,11 @@ def menu() -> bool:
             try:
                 start = int(start.strip())
                 if start < 0:
-                    print(f'\tPor favor digite um valor numérico inteiro POSITIVO.')
-                    print()
+                    print(f'\tPor favor digite um valor numérico inteiro POSITIVO.\n')
                 else:
                     break
             except ValueError:
-                print(f'\tPor favor digite um valor NUMÉRICO INTEIRO POSITIVO.')
-                print()
+                print(f'\tPor favor digite um valor NUMÉRICO INTEIRO POSITIVO.\n')
         else:
             start = start_default
             break
@@ -47,16 +45,13 @@ def menu() -> bool:
             try:
                 end = int(end.strip())
                 if end < 0:
-                    print(f'\tPor favor digite um valor numérico inteiro POSITIVO.')
-                    print()
+                    print(f'\tPor favor digite um valor numérico inteiro POSITIVO.\n')
                 elif start is not None and end < start:
-                    print(f'\tPor favor digite um valor numérico maior que {start}.')
-                    print()
+                    print(f'\tPor favor digite um valor numérico maior que {start}.\n')
                 else:
                     break
             except ValueError:
-                print(f'\tPor favor digite um valor NUMÉRICO inteiro positivo.')
-                print()
+                print(f'\tPor favor digite um valor NUMÉRICO inteiro positivo.\n')
         else:
             end = end_default
             break
@@ -70,24 +65,20 @@ def menu() -> bool:
             try:
                 quantity = int(quantity.strip())
                 if quantity > max_qt:
-                    print(f'\tA quantidade máxima permitida é {max_qt}')
-                    print()
+                    print(f'\tA quantidade máxima permitida é {max_qt}\n')
                     continue
                 else:
                     break
             except ValueError:
-                print(f'\tPor favor digite um valor numérico inteiro')
-                print()
+                print(f'\tPor favor digite um valor numérico inteiro\n')
         else:
             quantity = quantity_default
             break
     op = input(f'Permitir números repetidos? (default: N) [Y|N]\n\t>_ ')
     op = op.strip()[0].upper() if len(op) > 0 else 'N'
     number_repeat = True if op == 'Y' else False
-    print()
     numeros = map(str, gerar_numero(start=start, end=end, quantity=quantity, number_repeat=number_repeat))
-    print(end='')
-    print(f'Número(s) sorteado(s): {", ".join(numeros)}.')
+    print(f'\nNúmero(s) sorteado(s): {", ".join(numeros)}.')
     op = input(f'Deseja continuar? (default: {op_default}) [Y|N]\n\t>_ ')
     op = op.strip()[0].upper() if len(op) > 0 else op_default
     print()
